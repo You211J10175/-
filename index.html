@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="../dist/jspsych.js"></script>
-    <script src="../dist/plugin-video-button-response.js"></script>
-    <script src="../dist/plugin-html-button-response.js"></script>
-    <script src="../dist/plugin-image-button-response.js"></script>
-    <script src="../dist/plugin-preload.js"></script> 
-    <script src="../dist/plugin-survey-multi-choice.js"></script>
-    <link rel="stylesheet" href="../dist/jspsych.css">
+    <title>感情測定実験</title>
+    <script src="https://unpkg.com/jspsych@7.3.3"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-video-button-response@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-image-button-response@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
+    <link href="https://unpkg.com/jspsych@7.3.3/css/jspsych.css" rel="stylesheet" type="text/css" />
+
   </head>
   <body></body>
   <script>
+
     // セットアップ。共通
     var jsPsych = initJsPsych({
       on_finish: function() {
@@ -146,7 +149,7 @@
       button_label: '次へ',
     };
 
-    jsPsych.run([preload, pre_trial,trial_1, trial_2, multi_choice_block_horizontal_3,  trial_101, trial_102, multi_choice_block_horizontal_103, trial_201, trial_202, multi_choice_block_horizontal_203]);
+    jsPsych.run([pre_trial,trial_1, trial_2, multi_choice_block_horizontal_3,  trial_101, trial_102, multi_choice_block_horizontal_103, trial_201, trial_202, multi_choice_block_horizontal_203]);
 
   </script>
 </html>
