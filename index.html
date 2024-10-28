@@ -150,7 +150,7 @@
     };
 
     // 動画
-    var trial_201 = {
+    var trial_301 = {
       type: jsPsychVideoButtonResponse,
       stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/嫌悪_トレインスポッティング_編集済.mp4'],
       choices: ['次へ'],
@@ -167,7 +167,7 @@
     };
 
     // グリッド画像
-    var trial_202 = {
+    var trial_302 = {
       type: jsPsychImageButtonResponse,
       stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド暫定.png'],
       // stimulus_width: 400,
@@ -176,7 +176,7 @@
     };    
 
     // 回答
-    var multi_choice_block_horizontal_203 = {
+    var multi_choice_block_horizontal_303 = {
       type: jsPsychSurveyMultiChoice,
       questions: [
         {prompt: "アルファベット", name: 'アルファベット', options: page_1_options, required: true, horizontal: true,}, 
@@ -185,7 +185,7 @@
       button_label: '次へ',
     };
 
-    jsPsych.run([pre_trial,trial_1, trial_2, multi_choice_block_horizontal_3,  trial_101, trial_102, multi_choice_block_horizontal_103, trial_201, trial_202, multi_choice_block_horizontal_203]);
+    jsPsych.run([pre_trial,trial_1, trial_2, multi_choice_block_horizontal_3,  trial_101, trial_102, multi_choice_block_horizontal_103, trial_201, trial_202, multi_choice_block_horizontal_203, trial_301, trial_302, multi_choice_block_horizontal_303]);
 
   </script>
 </html>
