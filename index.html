@@ -58,7 +58,7 @@
     // グリッド画像
     var trial_2 = {
       type: jsPsychImageButtonResponse,
-      stimulus: ['画像/感情測定グリッド暫定.png'],
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド暫定.png'],
       // stimulus_width: 400,
       choices: ['次へ'],
       prompt: "<p>ここには画像の説明を書く。</p>今回は黒く塗りつぶされたマス(中心の予定)のアルファベットと数字の組み合わせ(a-1など)を、次のページで選択してみてください。",
@@ -78,7 +78,7 @@
     // 最初の動画
     var trial_101 = {
       type: jsPsychVideoButtonResponse,
-      stimulus: ['video/恐怖_コピーキャット_編集済.mp4'],
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/恐怖_コピーキャット_編集済.mp4'],
       choices: ['次へ'],
       margin_vertical: '10px',
       margin_horizontal: '8px',
@@ -95,7 +95,7 @@
     // 最初のグリッド画像
     var trial_102 = {
       type: jsPsychImageButtonResponse,
-      stimulus: ['画像/感情測定グリッド暫定.png'],
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド暫定.png'],
       // stimulus_width: 400,
       choices: ['次へ'],
       prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせ(a-1など)を、次のページで選択してください",
@@ -116,7 +116,7 @@
     // 動画
     var trial_201 = {
       type: jsPsychVideoButtonResponse,
-      stimulus: ['video/優しさ_妹の恋人_編集済.mp4'],
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/優しさ_妹の恋人_編集済.mp4'],
       choices: ['次へ'],
       margin_vertical: '10px',
       margin_horizontal: '8px',
@@ -133,7 +133,43 @@
     // グリッド画像
     var trial_202 = {
       type: jsPsychImageButtonResponse,
-      stimulus: ['画像/感情測定グリッド暫定.png'],
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド暫定.png'],
+      // stimulus_width: 400,
+      choices: ['次へ'],
+      prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせ(a-1など)を、次のページで選択してください",
+    };    
+
+    // 回答
+    var multi_choice_block_horizontal_203 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {prompt: "アルファベット", name: 'アルファベット', options: page_1_options, required: true, horizontal: true,}, 
+        {prompt: "数字", name: '数字', options: page_2_options, required: true, horizontal: true}
+      ],
+      button_label: '次へ',
+    };
+
+    // 動画
+    var trial_201 = {
+      type: jsPsychVideoButtonResponse,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/嫌悪_トレインスポッティング_編集済.mp4'],
+      choices: ['次へ'],
+      margin_vertical: '10px',
+      margin_horizontal: '8px',
+      prompt: '再生終了したら次のページへ',
+      //352*288　動画解像度
+      width: 704,
+      height: 576,
+      autoplay: true,
+      rate: 1,
+      response_ends_trial: true,
+      // response_allowed_while_playing: false　本番では有効に
+    };
+
+    // グリッド画像
+    var trial_202 = {
+      type: jsPsychImageButtonResponse,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド暫定.png'],
       // stimulus_width: 400,
       choices: ['次へ'],
       prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせ(a-1など)を、次のページで選択してください",
