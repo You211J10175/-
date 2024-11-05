@@ -70,7 +70,7 @@
     };
 
     // 使用可能な2つの異なる回答尺度を定義する。質問テンプレから
-    var page_1_options = ["a", "b", "c", "d","e", "f", "g", "h", "i"];
+    var page_1_options = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
     var page_2_options = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
     // 初期文章。動画テンプレから
@@ -80,7 +80,7 @@
       choices: ['次へ']
     };
 
-     // 動画
+    // 動画
     var trial_1 = {
       type: jsPsychVideoButtonResponse,
       stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/49_ニュートラル.mp4'],
@@ -94,7 +94,7 @@
       autoplay: true,
       rate: 1,
       response_ends_trial: true,
-      // response_allowed_while_playing: false　本番では有効に
+    //  response_allowed_while_playing: false　//本番では有効に
     };
 
     // グリッド画像
@@ -103,7 +103,7 @@
       stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド黒_サブラベル無.png'],
       // stimulus_width: 400,
       choices: ['次へ'],
-      prompt: "<p>ここには画像の説明を書く。</p>今回は黒く塗りつぶされたマス(中心の予定)のアルファベットと数字の組み合わせ(a-1など)を、次のページで選択してみてください。",
+      prompt: "<p>ここには画像の説明を書く。</p>今回は黒く塗りつぶされたマスのアルファベットと数字の組み合わせ(例.A-1など)を、次のページで選択してください。",
     };    
 
     // 回答
@@ -116,47 +116,17 @@
       button_label: '次へ',
     };
 
-    // ここでグリッド画像の感情測定が必要かもしれない、開始時の感情を測定する必要性？
-    // 最初の動画
+    // ここでグリッド画像の感情測定が必要かもしれない、開始時の感情を測定する必要性？ いらない決定
+    
+    // 動画の説明文
     var trial_101 = {
-      type: jsPsychVideoButtonResponse,
-      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/恐怖_コピーキャット_編集済.mp4'],
-      choices: ['次へ'],
-      margin_vertical: '10px',
-      margin_horizontal: '8px',
-      prompt: '再生終了したら次のページへ',
-      //352*288　動画解像度
-      width: 704,
-      height: 576,
-      autoplay: true,
-      rate: 1,
-      response_ends_trial: true,
-      // response_allowed_while_playing: false　本番では有効に
+      type: jsPsychHtmlButtonResponse,
+      stimulus: '<p>次の動画の説明</p>ベニー(男)が喫茶店でバカを演じる。',
+      choices: ['次へ']
     };
-
-    // 最初のグリッド画像
-    var trial_102 = {
-      type: jsPsychImageButtonResponse,
-      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド_サブラベル無.png'],
-      // stimulus_width: 400,
-      choices: ['次へ'],
-      prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせ(a-1など)を、次のページで選択してください",
-    };    
-
-    // 最初の回答、nameは入れた方が集計時に見やすいかも
-    // こっちの方が直感的に回答可能かもしれない
-    var multi_choice_block_horizontal_103 = {
-      type: jsPsychSurveyMultiChoice,
-      questions: [
-        {prompt: "アルファベット", name: 'アルファベット', options: page_1_options, required: true, horizontal: true,}, 
-        {prompt: "数字", name: '数字', options: page_2_options, required: true, horizontal: true}
-      ],
-      button_label: '次へ',
-    };
-    // 以下、「動画、画像、質問」の無限ループで行けそう
 
     // 動画
-    var trial_201 = {
+    var trial_102 = {
       type: jsPsychVideoButtonResponse,
       stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/優しさ_妹の恋人_編集済.mp4'],
       choices: ['次へ'],
@@ -169,20 +139,66 @@
       autoplay: true,
       rate: 1,
       response_ends_trial: true,
-      // response_allowed_while_playing: false　本番では有効に
+    //  response_allowed_while_playing: false　//本番では有効に
     };
 
     // グリッド画像
-    var trial_202 = {
+    var trial_103 = {
       type: jsPsychImageButtonResponse,
-      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド暫定.png'],
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド_サブラベル無.png'],
       // stimulus_width: 400,
       choices: ['次へ'],
-      prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせ(a-1など)を、次のページで選択してください",
+      prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせを、次のページで選択してください",
     };    
 
     // 回答
-    var multi_choice_block_horizontal_203 = {
+    var multi_choice_block_horizontal_104 = {
+      type: jsPsychSurveyMultiChoice,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド_サブラベル無.png'],
+      questions: [
+        {prompt: "アルファベット", name: 'アルファベット', options: page_1_options, required: true, horizontal: true,}, 
+        {prompt: "数字", name: '数字', options: page_2_options, required: true, horizontal: true}
+      ],
+      button_label: '次へ',
+    };
+    
+    // 以下、「動画、画像、質問」の無限ループで行けそう
+
+    // 動画の説明文
+    var trial_201 = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: '<p>次の動画の説明</p>ベニー(男)が喫茶店でバカを演じる。',
+      choices: ['次へ']
+    };
+
+    // 動画
+    var trial_202 = {
+      type: jsPsychVideoButtonResponse,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/娯楽_メリーに首ったけ_編集済.mp4'],
+      choices: ['次へ'],
+      margin_vertical: '10px',
+      margin_horizontal: '8px',
+      prompt: '再生終了したら次のページへ',
+      //352*288　動画解像度
+      width: 704,
+      height: 576,
+      autoplay: true,
+      rate: 1,
+      response_ends_trial: true,
+    //  response_allowed_while_playing: false　//本番では有効に
+    };
+
+    // グリッド画像
+    var trial_203 = {
+      type: jsPsychImageButtonResponse,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド_サブラベル無.png'],
+      // stimulus_width: 400,
+      choices: ['次へ'],
+      prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせを、次のページで選択してください",
+    };    
+
+    // 回答
+    var multi_choice_block_horizontal_204 = {
       type: jsPsychSurveyMultiChoice,
       questions: [
         {prompt: "アルファベット", name: 'アルファベット', options: page_1_options, required: true, horizontal: true,}, 
@@ -190,9 +206,16 @@
       ],
       button_label: '次へ',
     };
+    
+    // 動画の説明文
+    var trial_301 = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: '<p>次の動画の説明</p>ベニー(男)が喫茶店でバカを演じる。',
+      choices: ['次へ']
+    };
 
     // 動画
-    var trial_301 = {
+    var trial_302 = {
       type: jsPsychVideoButtonResponse,
       stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/嫌悪_トレインスポッティング_編集済.mp4'],
       choices: ['次へ'],
@@ -205,20 +228,20 @@
       autoplay: true,
       rate: 1,
       response_ends_trial: true,
-      // response_allowed_while_playing: false　本番では有効に
+    //  response_allowed_while_playing: false　//本番では有効に
     };
 
     // グリッド画像
-    var trial_302 = {
+    var trial_303 = {
       type: jsPsychImageButtonResponse,
-      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド暫定.png'],
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド_サブラベル無.png'],
       // stimulus_width: 400,
       choices: ['次へ'],
-      prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせ(a-1など)を、次のページで選択してください",
+      prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせを、次のページで選択してください",
     };    
 
     // 回答
-    var multi_choice_block_horizontal_303 = {
+    var multi_choice_block_horizontal_304 = {
       type: jsPsychSurveyMultiChoice,
       questions: [
         {prompt: "アルファベット", name: 'アルファベット', options: page_1_options, required: true, horizontal: true,}, 
@@ -226,8 +249,138 @@
       ],
       button_label: '次へ',
     };
+    
+    // 動画の説明文
+    var trial_401 = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: '<p>次の動画の説明</p>ベニー(男)が喫茶店でバカを演じる。',
+      choices: ['次へ']
+    };
 
-    jsPsych.run([preload,pre_trial,trial_1, trial_2, multi_choice_block_horizontal_3,  trial_101, trial_102, multi_choice_block_horizontal_103, trial_201, trial_202, multi_choice_block_horizontal_203, trial_301, trial_302, multi_choice_block_horizontal_303]);
+    // 動画
+    var trial_402 = {
+      type: jsPsychVideoButtonResponse,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/怒り_シンドラーのリスト_編集済.mp4'],
+      choices: ['次へ'],
+      margin_vertical: '10px',
+      margin_horizontal: '8px',
+      prompt: '再生終了したら次のページへ',
+      //352*288　動画解像度
+      width: 704,
+      height: 576,
+      autoplay: true,
+      rate: 1,
+      response_ends_trial: true,
+    //  response_allowed_while_playing: false　//本番では有効に
+    };
+
+    // グリッド画像
+    var trial_403 = {
+      type: jsPsychImageButtonResponse,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド_サブラベル無.png'],
+      // stimulus_width: 400,
+      choices: ['次へ'],
+      prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせを、次のページで選択してください",
+    };    
+
+    // 回答
+    var multi_choice_block_horizontal_404 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {prompt: "アルファベット", name: 'アルファベット', options: page_1_options, required: true, horizontal: true,}, 
+        {prompt: "数字", name: '数字', options: page_2_options, required: true, horizontal: true}
+      ],
+      button_label: '次へ',
+    };
+    
+    // 動画の説明文
+    var trial_501 = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: '<p>次の動画の説明</p>ベニー(男)が喫茶店でバカを演じる。',
+      choices: ['次へ']
+    };
+
+    // 動画
+    var trial_502 = {
+      type: jsPsychVideoButtonResponse,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/恐怖_コピーキャット_編集済.mp4'],
+      choices: ['次へ'],
+      margin_vertical: '10px',
+      margin_horizontal: '8px',
+      prompt: '再生終了したら次のページへ',
+      //352*288　動画解像度
+      width: 704,
+      height: 576,
+      autoplay: true,
+      rate: 1,
+      response_ends_trial: true,
+    //  response_allowed_while_playing: false　//本番では有効に
+    };
+
+    // グリッド画像
+    var trial_503 = {
+      type: jsPsychImageButtonResponse,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド_サブラベル無.png'],
+      // stimulus_width: 400,
+      choices: ['次へ'],
+      prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせを、次のページで選択してください",
+    };    
+
+    // 回答
+    var multi_choice_block_horizontal_504 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {prompt: "アルファベット", name: 'アルファベット', options: page_1_options, required: true, horizontal: true,}, 
+        {prompt: "数字", name: '数字', options: page_2_options, required: true, horizontal: true}
+      ],
+      button_label: '次へ',
+    };
+    
+    // 動画の説明文
+    var trial_601 = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: '<p>次の動画の説明</p>ベニー(男)が喫茶店でバカを演じる。',
+      choices: ['次へ']
+    };
+
+    // 動画
+    var trial_602 = {
+      type: jsPsychVideoButtonResponse,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/悲しみ_ライフ・イズ・ビューティフル_編集済.mp4'],
+      choices: ['次へ'],
+      margin_vertical: '10px',
+      margin_horizontal: '8px',
+      prompt: '再生終了したら次のページへ',
+      //352*288　動画解像度
+      width: 704,
+      height: 576,
+      autoplay: true,
+      rate: 1,
+      response_ends_trial: true,
+    //  response_allowed_while_playing: false　//本番では有効に
+    };
+
+    // グリッド画像
+    var trial_603 = {
+      type: jsPsychImageButtonResponse,
+      stimulus: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド_サブラベル無.png'],
+      // stimulus_width: 400,
+      choices: ['次へ'],
+      prompt: "現在の感情に当てはまるマスのアルファベットと数字の組み合わせを、次のページで選択してください",
+    };    
+
+    // 回答
+    var multi_choice_block_horizontal_604 = {
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {prompt: "アルファベット", name: 'アルファベット', options: page_1_options, required: true, horizontal: true,}, 
+        {prompt: "数字", name: '数字', options: page_2_options, required: true, horizontal: true}
+      ],
+      button_label: '次へ',
+    };
+    
+
+    jsPsych.run([preload, pre_trial, trial_1, trial_2, multi_choice_block_horizontal_3, trial_101, trial_102, trial_103, multi_choice_block_horizontal_104, trial_201, trial_202, multi_choice_block_horizontal_203, trial_301, trial_302, multi_choice_block_horizontal_303]);
 
   </script>
 </html>
