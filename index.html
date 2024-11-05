@@ -50,24 +50,22 @@
     });
 //ここを消す    
 
-    // プレロード処理。提示タイプ共通
-    var preload = {
-      type: jsPsychPreload,
-      auto_preload: true,
-      images: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド_サブラベル無.png',
-               'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド黒_サブラベル無.png',
-               ],
-      video: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/49_ニュートラル.mp4',
-              'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/優しさ_妹の恋人_編集済.mp4',
-              'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/娯楽_メリーに首ったけ_編集済.mp4',
-              'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/嫌悪_トレインスポッティング_編集済.mp4',
-              'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/怒り_シンドラーのリスト_編集済.mp4',
-              'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/恐怖_コピーキャット_編集済.mp4',
-              'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/悲しみ_ライフ・イズ・ビューティフル_編集済.mp4',
-              ]
-
-      
-    };
+    // プレロード処理。提示タイプ共通、スマホで再生できなくなったから現在無効に
+    //var preload = {
+    //  type: jsPsychPreload,
+    //  auto_preload: true,
+    //  images: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド_サブラベル無.png',
+    //           'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/感情測定グリッド黒_サブラベル無.png',
+    //           ],
+    //  video: ['https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/49_ニュートラル.mp4',
+    //          'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/優しさ_妹の恋人_編集済.mp4',
+    //          'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/娯楽_メリーに首ったけ_編集済.mp4',
+    //          'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/嫌悪_トレインスポッティング_編集済.mp4',
+    //          'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/怒り_シンドラーのリスト_編集済.mp4',
+    //          'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/恐怖_コピーキャット_編集済.mp4',
+    //          'https://raw.githubusercontent.com/You211J10175/experiment/refs/heads/main/悲しみ_ライフ・イズ・ビューティフル_編集済.mp4',
+    //          ]
+    //};
 
     // 使用可能な2つの異なる回答尺度を定義する。質問テンプレから
     var page_1_options = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
@@ -76,7 +74,7 @@
     // 初期文章。動画テンプレから
     var pre_trial_001 = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: '<p>この実験では、映像視聴により想起される感情を測定することを目的としています。</p>これから１本のデモ動画と、６本の刺激動画を見て、それぞれ質問に答えていただきます。<p></p>',
+      stimulus: '<p>この実験では、映像視聴により想起される感情を測定することを目的としています。</p><p>再生速度の変更は行わないでください。</p>これから１本のデモ動画と、６本の刺激動画を見て、それぞれ質問に答えていただきます。<p></p>',
       choices: ['次へ']
     };
 
@@ -149,7 +147,7 @@
       width: 704,
       height: 576,
       autoplay: true,
-      rate: 2,
+      rate: 1,
       response_ends_trial: true,
     //  response_allowed_while_playing: false　//本番では有効に
     };
