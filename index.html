@@ -387,6 +387,12 @@
       ],
       button_label: '次へ',
     };
+
+    // 締めの一言
+    var trial_701 = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: '<p>これで実験は終了です。</p><p>ご協力ありがとうございました。</p>'
+    };
     
 
     jsPsych.run([pre_trial_001, pre_trial_002, trial_003, trial_004, multi_choice_block_horizontal_005, pre_trial_006,
@@ -395,7 +401,9 @@
                  trial_301, trial_302, trial_303, multi_choice_block_horizontal_304,
                  trial_401, trial_402, trial_403, multi_choice_block_horizontal_404,
                  trial_501, trial_502, trial_503, multi_choice_block_horizontal_504,
-                 trial_601, trial_602, trial_603, multi_choice_block_horizontal_604,]);
+                 trial_601, trial_602, trial_603, multi_choice_block_horizontal_604,
+                 trial_701,
+                ]);
 
   </script>
 </html>
