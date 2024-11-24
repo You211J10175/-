@@ -87,7 +87,7 @@
 
     var pre_trial_002 = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: '次ページのデモ動画で音量調節を行って下さい。<p></p>',
+      stimulus: '<p>次ページのデモ動画で音量調節を行って下さい。</p><p>また通信環境によっては、動画の再生に時間がかかることがあります。</p><p></p>',
       choices: ['動画へ']
     };
 
@@ -132,8 +132,7 @@
       stimulus: '<p>ここまでで実験の説明は終わりです。</p><p>次ページから動画の説明を読み、再生される動画を視聴し、質問に答えていってください。</p><p></p>',
       choices: ['次へ']
     };
-
-    // ここでグリッド画像の感情測定が必要かもしれない、開始時の感情を測定する必要性？ いらない決定
+    
     
     // 動画の説明文
     var trial_101 = {
@@ -398,8 +397,8 @@
     // 締めの一言
     var trial_701 = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: '<p>これで実験は終了です。</p><p>ご協力ありがとうございました。</p><p>このまま画面を閉じてください。</p>',
-       choices: ['　'],
+      stimulus: '<p>これで実験は終了です。</p><p>下の送信ボタンを押して、データを送信してください。</p><p>ご協力ありがとうございました。</p>',
+       choices: ['送信'],
     on_finish: function() {
         // 最終トライアル終了時に特別な処理を追加することも可能
         console.log("Experiment completed, saving data...");
